@@ -1,6 +1,193 @@
 :root {
   --primary: #a7c7e7;
   --background: #ffffff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Ubuntu", "Song-Myung", sans-serif;
+  background-color: var(--background);
+  color: #000000;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Mencegah horizontal scroll */
+}
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  background-color: rgba(31, 42, 46, 0.647); /* hitam transparan */
+  backdrop-filter: blur(10px); /* membuat isi di belakang blur */
+  -webkit-backdrop-filter: blur(10px); /* untuk Safari */
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.navbar-logo h1 {
+  color: #ffd700;
+}
+
+.navbar-logo span {
+  color: #ffd700;
+}
+
+/* Logo */
+.navbar .navbar-logo img {
+  height: 50px;
+  object-fit: contain;
+  padding-left: 30px;
+}
+
+/* Navbar menu */
+.navbar-nav {
+  display: flex;
+  gap: 2rem; /* Memberi jarak antar link */
+}
+
+.navbar-nav a {
+  color: #fff;
+  font-size: 1rem;
+  font-family: "song myung", sans-serif;
+  transition: color 0.3s ease;
+}
+
+.navbar .navbar-nav a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid var(--background);
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(0.5);
+}
+
+.navbar-nav a:hover {
+  color: #ffd700;
+}
+
+.navbar .navbar-extra a {
+  color: #fff;
+  margin: 0 0.5rem;
+}
+
+.navbar .navbar-extra a:hover {
+  color: #ffd700;
+}
+
+#Menu {
+  display: none;
+}
+
+/* NAVBAR END */
+
+/* Media queries*/
+/* laptop */
+@media (max-width: 1366px) {
+  html {
+    font-size: 90%;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  #Menu {
+    display: inline-block;
+  }
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: rgba(31, 42, 46, 0.647);
+    width: 30rem;
+    height: 100vh;
+    transition: 0.3s;
+  }
+  .navbar .navbar-nav.active {
+    right: 0;
+  }
+
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: rgba(31, 42, 46, 0.647);
+    width: 30rem;
+    height: 100vh;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem;
+    transition: right 0.3s ease;
+    font-size: 5rem;
+  }
+}
+
+/* mobile */
+@media (max-width: 450px) {
+  #Menu {
+    display: inline-block;
+  }
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: rgba(31, 42, 46, 0.647);
+    width: 30rem;
+    height: 100vh;
+    transition: 0.3s;
+  }
+  .navbar .navbar-nav.active {
+    right: 0;
+  }
+
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: rgba(31, 42, 46, 0.647);
+    width: 30rem;
+    height: 100vh;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem;
+    transition: right 0.3s ease;
+    font-size: 5rem;
+  }
+}
+:root {
+  --primary: #a7c7e7;
+  --background: #ffffff;
   --text-dark: #0e2f44; /* Warna teks gelap utama */
   --text-medium: #2c3e50; /* Warna teks sedang */
   --text-light: #555; /* Warna teks ringan */
